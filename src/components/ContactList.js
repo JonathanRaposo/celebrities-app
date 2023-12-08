@@ -1,8 +1,9 @@
-import Thead from './Thead'
+import Thead from './Thead';
 import ContactCard from './ContactCard';
 import ButtonRandom from './ButtonRandom';
 import ButtonSortByPopularity from './ButtonSortByPopularity';
 import ButtonSortByName from './ButtonSortByName';
+
 
 const ContactList = ({
     celebrities,
@@ -23,7 +24,6 @@ const ContactList = ({
 
             <table>
                 <Thead />
-
                 <tbody>
                     {celebrities.map((contact) => {
                         return <ContactCard

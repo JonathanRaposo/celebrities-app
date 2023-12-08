@@ -5,18 +5,20 @@ import ContactList from './components/ContactList'
 const App = () => {
   const [celebrities, setCelebrities] = useState(ironContacts.slice(0, 5));
   const [remainingCelebrities, setRemainingCelebrities] = useState(ironContacts.slice(5))
+  console.log(remainingCelebrities.length)
 
-  console.log(ironContacts.length)
   // add random contact to the list: 
   const AddRandomContact = () => {
-    if (remainingCelebrities > 0) {
+    if (remainingCelebrities.length > 0) {
       const randomIndex = Math.floor(Math.random() * remainingCelebrities.length);
       const randomContact = remainingCelebrities[randomIndex];
 
       setCelebrities([...celebrities, randomContact])
       const updatedRemaining = remainingCelebrities.filter((celeb) => celeb.id !== randomContact.id);
       setRemainingCelebrities(updatedRemaining)
+
     }
+
   }
   // sort by popularity:
   const sortByPopularity = () => {
